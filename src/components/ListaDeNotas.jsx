@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import CardNota from './CardNota'
 
 
 export default class ListaDeNotas extends Component{
@@ -6,14 +7,15 @@ export default class ListaDeNotas extends Component{
   render(){
     return(
       <ul>
-        <li>
-          <section>
-            <header>
-              <h3>Titulo</h3>
-            </header>
-            <p>Escreva sua nota</p>
-          </section>
-        </li>
+        { Array.of("Trabalho", "Trabalho", "Estudo")
+        .map( categoria => {
+          return( 
+          <li>
+            <h4>{categoria}</h4>
+            <CardNota />
+          </li>
+          )
+        } ) }
       </ul> 
     )
   }
